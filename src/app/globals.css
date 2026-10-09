@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #080a0f;
+    --bg-card: #0f131c;
+    --bg-card-hover: #151b27;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(204, 255, 0, 0.25);
+    
+    --accent-lime: #ccff00;
+    --accent-lime-muted: #99cc00;
+    --accent-lime-glow: rgba(204, 255, 0, 0.15);
+    
+    --accent-violet: #b87cf8;
+    --accent-violet-glow: rgba(184, 124, 248, 0.15);
+    
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+  }
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: var(--accent-lime);
+  selection-color: #000000;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2536;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-lime-muted);
+}
+
+/* Background Cyber Grid Pattern */
+.bg-cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-cyber-dots {
+  background-image: radial-gradient(rgba(204, 255, 0, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glowing Border Effect */
+.glow-border-lime {
+  box-shadow: 0 0 15px -3px rgba(204, 255, 0, 0.2), inset 0 0 15px -3px rgba(204, 255, 0, 0.05);
+}
+
+.glow-text-lime {
+  text-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
+}
+
+.glow-border-violet {
+  box-shadow: 0 0 15px -3px rgba(184, 124, 248, 0.25);
+}
+
+/* Glassmorphism Card */
+.glass-panel {
+  background: rgba(15, 19, 28, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel:hover {
+  border-color: rgba(204, 255, 0, 0.3);
+}
+
+/* Custom Pulsing Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
